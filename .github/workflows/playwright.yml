@@ -20,7 +20,7 @@ on:
           - test:api
           - test:web
           - test:datadriven
-        default: "test:end-to-end"
+        default: "sanity"
       browser:
         description: "Select browser"
         type: choice
