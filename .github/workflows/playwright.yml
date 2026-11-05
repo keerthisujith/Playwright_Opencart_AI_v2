@@ -20,7 +20,7 @@ on:
           - test:api
           - test:web
           - test:datadriven
-        default: "end-to-end"
+        default: "sanity"
       browser:
         description: "Select browser"
         type: choice
@@ -62,7 +62,7 @@ jobs:
 
       - name: 🧪 Run Playwright Tests
         run: |
-          $suite = "${{ github.event.inputs.test_suite || 'test:end-to-end' }}"
+          $suite = "${{ github.event.inputs.test_suite || 'test:sanity' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
           $mode = "${{ github.event.inputs.mode || 'headless' }}"
           $tag = $suite -replace 'test:', ''
